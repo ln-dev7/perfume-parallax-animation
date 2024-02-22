@@ -43,7 +43,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    z-index: 3;
+    z-index: 6;
 
     h1 {
       font-size: 3rem;
@@ -64,6 +64,7 @@ body {
       padding: 0.75rem 2rem;
       font-weight: 700;
       font-size: 16px;
+      cursor: pointer;
     }
   }
 
@@ -87,7 +88,8 @@ body {
   .bg2 {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    inset: 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,7 +101,8 @@ body {
   }
   .bg2 {
     background-image: url("/bg-2.png");
-    //z-index: 4;
+    transform: translateY(100%);
+    z-index: 1;
   }
 }
 
@@ -124,4 +127,34 @@ body {
       font-weight: 700;
     }
   }
+}
+
+.run,
+.reload {
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 16px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #a8555a;
+  padding: 1rem;
+  font-weight: 700;
+  width: 70px;
+  height: 70px;
+  transition: background 0.3s ease, color 0.3s ease;
+  &:hover {
+    background: #fff;
+    color: #a8555a;
+  }
+}
+
+.reload {
+  display: none;
+  font-size: 13px;
 }
